@@ -142,7 +142,16 @@ describe('AppComponent', () => {
     var notNull = 'Not null';
     expect(null).toBeNull;
     expect(nullValue).toBeNull();
-    expect(valueUndefined).toBeNull();
+    expect(valueUndefined).not.toBeNull();
     expect(notNull).not.toBeNull();
+  });
+
+  it('shoud check toContain Jasmine Matcher', () => {
+    var MyArray = ['Jasmine', 'Youtube', 'Tutorial'];
+    expect([1, 2, 3]).toContain(2);
+    expect([1, 2, 3]).toContain(2, 3);
+    expect(MyArray).toContain('Jasmine');
+    expect([1, 2, 3]).not.toContain(4);
+    expect(MyArray).not.toContain('Video');
   });
 });
