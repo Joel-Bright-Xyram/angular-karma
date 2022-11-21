@@ -154,4 +154,18 @@ describe('AppComponent', () => {
     expect([1, 2, 3]).not.toContain(4);
     expect(MyArray).not.toContain('Video');
   });
+
+  it('shoud check toContain Jasmine Matcher', () => {
+    var MyArray = ['Jasmine', 'Youtube', 'Tutorial'];
+    expect([1, 2, 3]).toContain(2);
+    expect([1, 2, 3]).toContain(2, 3);
+    expect(MyArray).toContain('Jasmine');
+    expect([1, 2, 3]).not.toContain(4);
+    expect(MyArray).not.toContain('Video');
+  });
+
+  it('shoud check toBeNan Jasmine Matcher', () => {
+    expect(0 / 0).toBeNaN();
+    expect(0 / 5).not.toBeNaN();
+  });
 });
