@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { Addition } from './calculator';
+import { Addition } from './Calculator';
 
 describe('AppComponent', () => {
   let component = new AppComponent();
@@ -101,5 +101,4 @@ describe('AppComponent', () => {
     expect(input).not.toMatch(/Yout/);
     expect(strPhoneNo).toMatch(/\d{3}-\d{3}-\d{3}-\d{4}/);
   });
-  
 });
