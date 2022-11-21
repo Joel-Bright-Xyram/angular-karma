@@ -106,11 +106,43 @@ describe('AppComponent', () => {
     var e = 2.78;
     expect(pi).not.toBeCloseTo(e);
     expect(pi).toBeCloseTo(e, 0);
-    expect(e).toBeCloseTo(2.789);
+    expect(e).toBeCloseTo(2.783);
     expect(e).toBeCloseTo(2.785, 1);
     expect(4.334).toBeCloseTo(4.3345, 2);
     expect(4.334).not.toBeCloseTo(4.3, 2);
     expect(4.223).not.toBeCloseTo(4.22, 3);
     expect(4.223).not.toBeCloseTo(4.22, 4);
+  });
+
+  it('shoud check toBeDefined Jasmine Matcher', () => {
+    var MyObj = { foo: 'foo' };
+    var MyFunction = (function () {})();
+    var strUndefined;
+    expect('Tutorial').toBeDefined();
+    expect(MyObj).toBeDefined();
+    expect(MyObj.foo).toBeDefined();
+    expect(MyFunction).not.toBeDefined();
+    expect(strUndefined).not.toBeDefined();
+  });
+
+  it('shoud check toBeUndefined Jasmine Matcher', () => {
+    var MyObj = { foo: 'foo' };
+    var MyFunction = (function () {})();
+    var strUndefined;
+    expect('Tutorial').not.toBeUndefined;
+    expect(MyObj).not.toBeUndefined();
+    expect(MyObj.foo).not.toBeUndefined();
+    expect(MyFunction).toBeUndefined();
+    expect(strUndefined).toBeUndefined();
+  });
+
+  it('shoud check toBeNull Jasmine Matcher', () => {
+    var nullValue = null;
+    var valueUndefined;
+    var notNull = 'Not null';
+    expect(null).toBeNull;
+    expect(nullValue).toBeNull();
+    expect(valueUndefined).toBeNull();
+    expect(notNull).not.toBeNull();
   });
 });
