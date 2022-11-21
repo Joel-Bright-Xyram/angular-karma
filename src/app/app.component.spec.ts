@@ -168,4 +168,12 @@ describe('AppComponent', () => {
     expect(0 / 0).toBeNaN();
     expect(0 / 5).not.toBeNaN();
   });
+
+  it('shoud check toBePositiveInfinity Jasmine Matcher', () => {
+    expect(1 / 0).toBePositiveInfinity();
+  });
+
+  it('shoud check toBeNegativeInfinity Jasmine Matcher', () => {
+    expect(-1 / 0).toBeNegativeInfinity();
+  });
 });
