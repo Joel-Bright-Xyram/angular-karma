@@ -7,8 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-karma';
+  count: number = 10;
 
   ShowMessage(msg: string): string {
     return msg;
+  }
+
+  IncreaseCount(num: number) {
+    this.count = this.count + num;
+  }
+
+  DecreaseCount(num: number) {
+    this.count = this.count - num;
   }
 }

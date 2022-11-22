@@ -176,4 +176,44 @@ describe('AppComponent', () => {
   it('shoud check toBeNegativeInfinity Jasmine Matcher', () => {
     expect(-1 / 0).toBeNegativeInfinity();
   });
+
+  var comp: AppComponent | null;
+
+  beforeEach(function () {
+    console.log('Before Each');
+    comp = new AppComponent();
+  });
+
+  it('test 1', () => {
+    console.log('test 1');
+  });
+
+  it('test 2', () => {
+    console.log('test 2');
+  });
+
+  it('test 3', () => {
+    console.log('test 3');
+  });
+
+  it('Increase Count', () => {
+    if (comp !== null) {
+      comp.IncreaseCount(2);
+      expect(comp.count).toEqual(12);
+    }
+    console.log('Increase');
+  });
+
+  it('Decrease Count', () => {
+    if (comp !== null) {
+      comp.DecreaseCount(2);
+      expect(comp.count).toEqual(8);
+    }
+    console.log('Decrease');
+  });
+
+  afterEach(function () {
+    comp = null;
+    console.log('After Each');
+  });
 });
