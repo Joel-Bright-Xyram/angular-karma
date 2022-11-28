@@ -5,11 +5,14 @@ import { StudentService } from './student.service';
 
 import { StudentComponent } from './student.component';
 import { of } from 'rxjs';
+import { DebugElement, Component } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
 describe('StudentComponent', () => {
   let component: StudentComponent;
   let fixture: ComponentFixture<StudentComponent>;
-  let h1: HTMLElement;
+  let deb: DebugElement;
+  let h2: HTMLElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -23,7 +26,8 @@ describe('StudentComponent', () => {
     fixture = TestBed.createComponent(StudentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    h1 = fixture.nativeElement.querySelector('h1');
+    deb = fixture.debugElement;
+    h2 = fixture.nativeElement.querySelector('h2');
   });
 
   it('should create', () => {
@@ -61,9 +65,23 @@ describe('StudentComponent', () => {
     });
   });
 
-  it('Verify the h1 element Value', () => {
+  it('Verify the h2 element Value', () => {
     component.StudentSchoolResult();
     fixture.detectChanges();
-    expect(h1.textContent).toBe(component.studentResult);
+    expect(h2.textContent).toBe(component.studentResult);
+  });
+
+  it('Increase count on click', () => {
+    const h1 = deb.query(By.css('h1'));
+    const btn = deb.query(By.css('#btnIncreaseNumber'));
+
+    console.log(h1.nativeElement.innerText);
+    btn.triggerEventHandler('click', {});
+    fixture.detectChanges();
+    console.log(h1.nativeElement.innerText);
+
+    expect(component.countNumber.toString()).toEqual(
+      h1.nativeElement.innerText
+    );
   });
 });

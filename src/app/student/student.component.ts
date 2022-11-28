@@ -10,7 +10,16 @@ import { StudentService } from './student.service';
 export class StudentComponent implements OnInit {
   sum = 0;
   studentResult = '';
+  countNumber = 0;
   result: any;
+
+  studentInfo = { Name: 'Anurag', Branch: 'CSE', Mobile: 9876543210, Gender: 'Male', Age: 22};
+  // Name: string = 'Anurag';
+  // Branch: string = 'CSE';
+  // Mobile: number = 9876543210;
+  // Gender: string = 'Male';
+  // Age: number = 22;
+
   constructor(public service: StudentService) {}
 
   ngOnInit(): void {}
@@ -50,5 +59,13 @@ export class StudentComponent implements OnInit {
 
   SaveDataIntoConsol(info: { sumVal: number; name: string }) {
     console.log(info);
+  }
+
+  IncreaseNumber() {
+    this.countNumber = this.countNumber + 1;
+  }
+
+  DecreaseNumber() {
+    this.countNumber = this.countNumber - 1;
   }
 }

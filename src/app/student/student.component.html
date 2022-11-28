@@ -1,3 +1,44 @@
+<table>
+  <tr>
+    <td>Name</td>
+    <td>{{ studentInfo.Name }}</td>
+  </tr>
+  <tr>
+    <td>Branch</td>
+    <td>{{ studentInfo.Branch }}</td>
+  </tr>
+  <tr>
+    <td>Mobile</td>
+    <td>{{ studentInfo.Mobile }}</td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td>{{ studentInfo.Gender }}</td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td>{{ studentInfo.Age }}</td>
+  </tr>
+</table>
+
 <p>student portal!</p>
 <button (click)="StudentSchoolResult()">Get Result</button>
-<h1>{{ studentResult }}</h1>
+<h2>{{ studentResult }}</h2>
+
+<button
+  id="btnIncreaseNumber"
+  (click)="IncreaseNumber()"
+  class="btn btn-primary"
+>
+  Increase Number
+</button>
+<button
+  id="btnDecreaseNumber"
+  (click)="DecreaseNumber()"
+  class="btn btn-primary"
+  style="margin-left: 10px"
+>
+  Decrease Number
+</button>
+
+<h1>{{ countNumber }}</h1>
