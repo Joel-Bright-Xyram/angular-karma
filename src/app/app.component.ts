@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-karma';
   count: number = 10;
+  name = '';
 
   ShowMessage(msg: string): string {
     return msg;
@@ -19,5 +20,9 @@ export class AppComponent {
 
   DecreaseCount(num: number) {
     this.count = this.count - num;
+  }
+
+  private ShowName() {
+    this.name = 'Private Name Called';
   }
 }

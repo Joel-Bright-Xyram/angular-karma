@@ -11,6 +11,11 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
+  it('should call the private Method', () => {
+    component['ShowName']();
+    expect(component.name).toEqual('Private Name Called');
+  });
+
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;

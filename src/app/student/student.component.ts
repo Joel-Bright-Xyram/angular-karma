@@ -13,12 +13,24 @@ export class StudentComponent implements OnInit {
   countNumber = 0;
   result: any;
 
-  studentInfo = { Name: 'Anurag', Branch: 'CSE', Mobile: 9876543210, Gender: 'Male', Age: 22};
+  studentInfo = {
+    Name: 'Anurag',
+    Branch: 'CSE',
+    Mobile: 9876543210,
+    Gender: 'Male',
+    Age: 22,
+  };
   // Name: string = 'Anurag';
   // Branch: string = 'CSE';
   // Mobile: number = 9876543210;
   // Gender: string = 'Male';
   // Age: number = 22;
+
+  studentName = 'Jane Doe';
+
+  inputType = 'number';
+  inputPlaceholder = '7776';
+  inputReadonly = false;
 
   constructor(public service: StudentService) {}
 

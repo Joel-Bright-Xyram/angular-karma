@@ -30,6 +30,44 @@ describe('StudentComponent', () => {
     h2 = fixture.nativeElement.querySelector('h2');
   });
 
+  it('should interpolate the HTML innertext correctly', () => {
+    const name: HTMLElement =
+      fixture.debugElement.nativeElement.querySelector('#studentName');
+    expect(name.innerHTML).toEqual(component.studentName);
+
+    component.studentName = 'Name Input';
+    fixture.detectChanges();
+    expect(name.innerHTML).toEqual(component.studentName);
+  });
+
+  it('should interpolate the HTML properties correctly', () => {
+    const inputTag: HTMLInputElement =
+      fixture.debugElement.nativeElement.querySelector('#studentNum');
+    // type
+    expect(inputTag.type).toEqual(component.inputType);
+
+    component.inputType = 'text';
+    fixture.detectChanges();
+    expect(inputTag.type).toEqual(component.inputType);
+    // placeholder
+    expect(inputTag.placeholder).toEqual(component.inputPlaceholder);
+
+    component.inputPlaceholder = 'New Placeholder Text';
+    fixture.detectChanges();
+    expect(inputTag.placeholder).toEqual(component.inputPlaceholder);
+    // readOnly
+    expect(inputTag.readOnly).toBeFalsy();
+
+    component.inputReadonly = true;
+    fixture.detectChanges();
+    expect(inputTag.readOnly).toBeTruthy();
+  });
+
+  it('should call the private Method', () => {
+    component['calculate'](10, 20);
+    expect(component.sum).toEqual(30);
+  });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
