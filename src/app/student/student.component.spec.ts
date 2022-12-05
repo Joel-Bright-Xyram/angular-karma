@@ -78,19 +78,19 @@ describe('StudentComponent', () => {
     expect(component.calculate).toHaveBeenCalled();
   });
 
-  it('SpyOn method - 1', () => {
+  it('should use the SpyOn method - 1', () => {
     spyOn(component, 'calculate').and.returnValues(10, 20);
     let result = component.StudentResult();
     expect(result).toEqual('Fail');
   });
 
-  it('SpyOn method - 2', () => {
+  it('should use the SpyOn method - 2', () => {
     spyOn(component, 'calculate').and.returnValues(40, 20);
     let result = component.StudentResult();
     expect(result).toEqual('Pass');
   });
 
-  it('SpyOn method - 3', () => {
+  it('should use the SpyOn method - 3', () => {
     let service = fixture.debugElement.injector.get(StudentService);
     spyOn(service, 'SaveDetails').and.callFake(() => {
       return of({
@@ -103,13 +103,13 @@ describe('StudentComponent', () => {
     });
   });
 
-  it('Verify the h2 element Value', () => {
+  it('should verify value of the h2 element', () => {
     component.StudentSchoolResult();
     fixture.detectChanges();
     expect(h2.textContent).toBe(component.studentResult);
   });
 
-  it('Increase count on click', () => {
+  it('should increase count on click', () => {
     const h1 = deb.query(By.css('h1'));
     const btn = deb.query(By.css('#btnIncreaseNumber'));
 
