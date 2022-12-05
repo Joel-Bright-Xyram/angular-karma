@@ -72,7 +72,7 @@ describe('StudentComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('SpyOn method - original', () => {
+  it('should use the SpyOn method - original', () => {
     spyOn(component, 'calculate');
     component.saveData();
     expect(component.calculate).toHaveBeenCalled();
